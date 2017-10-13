@@ -47,7 +47,6 @@ function k2_theme_setup()
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menu('primary', esc_html__('Primary Menu', 'k2-theme'));
-    register_nav_menu('shortcode_menu', esc_html__('Shortcode Menu', 'k2-theme'));
 
     /*
      * This theme supports custom background color and image,
@@ -91,7 +90,6 @@ add_action('vc_after_init', 'k2_theme_after_vc_params');
 function k2_theme_after_vc_params()
 {
 }
-
 
 /**
  * Enqueue scripts and styles for front-end.
@@ -140,8 +138,6 @@ add_action('wp_enqueue_scripts', 'k2_theme_front_end_scripts');
 
 /**
  * load admin scripts.
- *
- * @author FOX
  */
 function k2_theme_admin_scripts()
 {
@@ -167,7 +163,6 @@ add_action('admin_enqueue_scripts', 'k2_theme_admin_scripts');
  *
  * Registers our main widget area and the front page widget areas.
  *
- * @since Fox
  */
 function k2_theme_widgets_init()
 {
@@ -190,7 +185,6 @@ add_action('widgets_init', 'k2_theme_widgets_init');
 /**
  * Display navigation to next/previous comments when applicable.
  *
- * @since 1.0.0
  */
 function k2_theme_comment_nav()
 {
@@ -218,7 +212,6 @@ function k2_theme_comment_nav()
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
- * @since 1.0.0
  */
 function k2_theme_paging_nav()
 {
@@ -263,7 +256,6 @@ function k2_theme_paging_nav()
 /**
  * Display navigation to next/previous post when applicable.
  *
- * @since 1.0.0
  */
 function k2_theme_post_nav()
 {
