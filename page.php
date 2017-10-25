@@ -11,7 +11,7 @@
 get_header(); ?>
 
 <div class="container">
-    
+
     <div class="row">
 
         <div class="col-xs-12">
@@ -30,7 +30,7 @@ get_header(); ?>
 
                     <?php 
 
-                    edit_post_link( esc_html__( 'Edit', 'k2-theme' ), '<span class="edit-link">', '</span>' );
+                    edit_post_link( esc_html__( 'Edit Page', 'k2-theme' ), '<span class="link-edit-page">', '</span>' );
                     // End the loop.
                 endwhile;
                 ?>
