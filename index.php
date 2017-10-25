@@ -35,45 +35,58 @@ else {
 get_header(); ?>
 
 <section class="container blog-default <?php echo esc_attr($_get_sidebar); ?>">
+
     <div class="row">
+
         <?php if($_get_sidebar == 'is-sidebar-left'){ ?>
             
             <div class="<?php echo esc_html($sidebar_col);?>">
+
                 <?php get_sidebar(); ?>
             </div>
-
         <?php }?>
+
         <div class="<?php echo esc_html($blog_column);?>">
+
             <main id="main" class="site-main">
 
                 <?php
                 if ( have_posts() ) :
+
                     while ( have_posts() ) : the_post();
 
                         get_template_part( 'post-templates/archives/content', get_post_format() );
-
                     endwhile; // end of the loop.
 
                     /* blog nav. */
                     k2_theme_paging_nav();
-
                 else :
-                    /* content none. */
-                    get_template_part( 'post-templates/archives', 'none' );
 
-                endif; ?>
+                    ?>
+                    <div class="entry-header">
 
+                        <h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'k2-theme' ); ?></h2>
+                    </div>
+
+                    <div class="entry-content">
+
+                        <p><?php esc_html_e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'k2-theme' ); ?></p>
+
+                        <?php get_search_form(); ?>
+                    </div><!-- .entry-content -->
+                    <?php
+                endif; 
+                ?>
             </main><!-- #content -->
         </div>
 
         <?php if($_get_sidebar == 'is-sidebar-right'){ ?>
             
             <div class="<?php echo esc_html($sidebar_col);?>">
+
                 <?php get_sidebar(); ?>
             </div>
-
         <?php }?>
-
     </div>
 </section><!-- #primary -->
 

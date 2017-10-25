@@ -375,7 +375,7 @@ function k2_theme_page_title(){
         $layout = $opt_meta_options['page_title_layout'];
 
     ?>
-    <div id="page-title" class="page-title">
+    <div class="page-title">
         <div class="container">
         <div class="row">
         <?php switch ($layout){
@@ -417,13 +417,13 @@ function k2_theme_get_page_title()
                 the_title();
             endif;
         elseif (is_front_page()):
-            esc_html_e('Blog', 'cms-theme-framework');
+            esc_html_e('Blog', 'k2-theme');
         /* search */
         elseif (is_search()):
-            printf( esc_html__( 'Search Results for: %s', 'cms-theme-framework' ), '<span>' . get_search_query() . '</span>' );
+            printf( esc_html__( 'Search Results for: %s', 'k2-theme' ), '<span>' . get_search_query() . '</span>' );
         /* 404 */
         elseif (is_404()):
-            esc_html_e( '404', 'cms-theme-framework');
+            esc_html_e( '404', 'k2-theme');
         /* other */
         else :
             the_title();
@@ -437,33 +437,33 @@ function k2_theme_get_page_title()
             single_tag_title();
         /* author. */
         elseif ( is_author() ) :
-            printf( esc_html__( 'Author: %s', 'cms-theme-framework' ), '<span class="vcard">' . get_the_author() . '</span>' );
+            printf( esc_html__( 'Author: %s', 'k2-theme' ), '<span class="vcard">' . get_the_author() . '</span>' );
         /* date */
         elseif ( is_day() ) :
-            printf( esc_html__( 'Day: %s', 'cms-theme-framework' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Day: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
         elseif ( is_month() ) :
-            printf( esc_html__( 'Month: %s', 'cms-theme-framework' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Month: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
         elseif ( is_year() ) :
-            printf( esc_html__( 'Year: %s', 'cms-theme-framework' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Year: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
         /* post format */
         elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-            esc_html_e( 'Asides', 'cms-theme-framework' );
+            esc_html_e( 'Asides', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-            esc_html_e( 'Galleries', 'cms-theme-framework');
+            esc_html_e( 'Galleries', 'k2-theme');
         elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-            esc_html_e( 'Images', 'cms-theme-framework');
+            esc_html_e( 'Images', 'k2-theme');
         elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-            esc_html_e( 'Videos', 'cms-theme-framework' );
+            esc_html_e( 'Videos', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-            esc_html_e( 'Quotes', 'cms-theme-framework' );
+            esc_html_e( 'Quotes', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-            esc_html_e( 'Links', 'cms-theme-framework' );
+            esc_html_e( 'Links', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-            esc_html_e( 'Statuses', 'cms-theme-framework' );
+            esc_html_e( 'Statuses', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-            esc_html_e( 'Audios', 'cms-theme-framework' );
+            esc_html_e( 'Audios', 'k2-theme' );
         elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-            esc_html_e( 'Chats', 'cms-theme-framework' );
+            esc_html_e( 'Chats', 'k2-theme' );
         /* woocommerce */
         elseif (function_exists('is_woocommerce') && is_woocommerce()):
             woocommerce_page_title();
