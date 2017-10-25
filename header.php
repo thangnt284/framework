@@ -22,7 +22,7 @@
 
 <div class="wrap-site">
 
-	<header id="masthead" class="site-header">
+	<header class="site-header">
 
 		<?php k2_theme_header(); ?>
 	</header><!-- #masthead -->
