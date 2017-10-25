@@ -6,7 +6,7 @@
 
             <div id="site-logo" class="col-xs-12 col-md-3">
 
-                <?php book_junky_header_logo(); ?>
+                <?php k2_theme_logo(); ?>
             </div><!-- #site-logo -->
 
             <div id="site-navigation" class="col-xs-12 col-md-9 <?php k2_theme_header_class(); ?>">
