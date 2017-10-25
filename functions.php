@@ -46,7 +46,7 @@ function k2_theme_setup()
     add_theme_support('post-formats', array('video', 'gallery'));
 
     // This theme uses wp_nav_menu() in one location.
-    register_nav_menu('primary', esc_html__('Primary Menu', 'k2-theme'));
+    register_nav_menu('primary_menu', esc_html__('Primary Menu', 'k2-theme'));
 
     /*
      * This theme supports custom background color and image,
@@ -587,7 +587,7 @@ function k2_theme_header_navigation()
 
     $attr = array(
         'menu_class' => 'nav-menu menu-main-menu',
-        'theme_location' => 'primary',
+        'theme_location' => 'primary_menu',
     );
 
     if ( is_page() && !empty($opt_meta_options['header_menu']) )
@@ -598,8 +598,12 @@ function k2_theme_header_navigation()
 
     $locations = get_nav_menu_locations();
 
-    if ( empty($locations['primary']) )
+    if ( empty($locations['primary_menu']) )
+    {
+
+        esc_html_e("Creat and select primary menu",'k2-theme');
         return;
+    }
 
     /* main nav. */
     wp_nav_menu($attr);
