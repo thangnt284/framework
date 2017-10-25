@@ -440,11 +440,11 @@ function k2_theme_get_page_title()
             printf( esc_html__( 'Author: %s', 'k2-theme' ), '<span class="vcard">' . get_the_author() . '</span>' );
         /* date */
         elseif ( is_day() ) :
-            printf( esc_html__( 'Day: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Day: %s', 'k2-theme' ), '<span>' . get_the_date('j') . '</span>' );
         elseif ( is_month() ) :
-            printf( esc_html__( 'Month: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Month: %s', 'k2-theme' ), '<span>' . get_the_date('F') . '</span>' );
         elseif ( is_year() ) :
-            printf( esc_html__( 'Year: %s', 'k2-theme' ), '<span>' . get_the_date() . '</span>' );
+            printf( esc_html__( 'Year: %s', 'k2-theme' ), '<span>' . get_the_date('Y') . '</span>' );
         /* post format */
         elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
             esc_html_e( 'Asides', 'k2-theme' );
