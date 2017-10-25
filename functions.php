@@ -631,17 +631,13 @@ function k2_theme_header_class()
 function k2_theme_nav_menu()
 {
 
-    $menus = array(
-        'primary_menu' => esc_html__('Primary Menu', 'k2_theme')
-    );
+    $menus = array();
 
     $obj_menus = wp_get_nav_menus();
 
     foreach ($obj_menus as $obj_menu) {
         $menus[$obj_menu->term_id] = $obj_menu->name;
     }
-    
-    var_dump($obj_menus);
 
     return $menus;
 }
