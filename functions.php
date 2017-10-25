@@ -601,17 +601,19 @@ function k2_theme_header_navigation()
     if ( empty($locations['primary_menu']) )
     {
 
+        wp_nav_menu($attr);
+    }
+
+    else
+    {
+
         ?>
         <a class="opt-nav" href="<?php echo get_admin_url(); ?>nav-menus.php">
 
             <?php esc_html_e('Create And Select Primary Menu', 'k2-theme'); ?>
         </a>
         <?php
-        return;
     }
-
-    /* main nav. */
-    wp_nav_menu($attr);
 }
 
 function k2_theme_header_class()
