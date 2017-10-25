@@ -602,7 +602,7 @@ function k2_theme_header_navigation()
     {
 
         ?>
-        <a href="<?php echo get_admin_url(); ?>nav-menus.php">
+        <a class="opt-nav" href="<?php echo get_admin_url(); ?>nav-menus.php">
 
             <?php esc_html_e('Create And Select Primary Menu', 'k2-theme'); ?>
         </a>
