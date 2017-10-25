@@ -628,6 +628,22 @@ function k2_theme_header_class()
     echo esc_attr($class);
 }
 
+function k2_theme_nav_menu()
+{
+
+    $menus = array(
+        'primary_menu' => esc_html__('Primary Menu', 'k2_theme')
+    );
+
+    $obj_menus = wp_get_nav_menus();
+
+    foreach ($obj_menus as $obj_menu) {
+        $menus[$obj_menu->term_id] = $obj_menu->name;
+    }
+
+    return $menus;
+}
+
 /* core functions. */
 require_once(get_template_directory() . '/inc/functions.php');
 

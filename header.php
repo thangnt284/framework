@@ -25,6 +25,7 @@
 	<header class="header-site">
 
 		<?php k2_theme_header(); ?>
+		<?php k2_theme_nav_menu(); ?>
 	</header><!-- #masthead -->
 
     <?php k2_theme_page_title(); ?><!-- #page-title -->
