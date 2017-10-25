@@ -22,10 +22,7 @@
     </footer><!-- .site-footer -->
 </div><!-- .site -->
 
-<?php k2_theme_end_boxed(); ?>
-
 <?php k2_theme_back_to_top(); ?>
-
 <?php wp_footer(); ?>
 </body>
 </html>

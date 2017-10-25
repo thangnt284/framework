@@ -22,7 +22,6 @@
 
 <body <?php body_class(); ?>>
 <?php k2_theme_page_loading(); ?>
-<?php k2_theme_start_boxed(); ?>
 
 <div id="page" class="hfeed site">
 
