@@ -22,11 +22,11 @@
 
 <div class="wrap-site">
 
-	<header class="site-header">
+	<header class="header-site">
 
 		<?php k2_theme_header(); ?>
 	</header><!-- #masthead -->
 
     <?php k2_theme_page_title(); ?><!-- #page-title -->
 
-	<div id="content" class="site-content">
+	<div class="content-site">
