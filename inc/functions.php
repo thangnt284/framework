@@ -19,6 +19,6 @@ require_once(get_template_directory() . '/inc/options/theme_options.php');
 require_once(get_template_directory() . '/inc/options/page_options.php');
 
 /* load template functions */
-require_once(get_template_directory() . '/inc/functions_core.php');
+require_once(get_template_directory() . '/inc/options/function_core.php');
 
 ?>
