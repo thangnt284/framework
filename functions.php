@@ -581,8 +581,44 @@ function k2_theme_edit_link()
     );
 }
 
+function k2_theme_header_navigation()
+{
+    global $opt_meta_options;
+
+    $attr = array(
+        'menu_class' => 'nav-menu menu-main-menu',
+        'theme_location' => 'primary',
+    );
+
+    if ( is_page() && !empty($opt_meta_options['header_menu']) )
+    {
+
+        $attr['menu'] = $opt_meta_options['header_menu'];
+    }
+
+    $locations = get_nav_menu_locations();
+
+    if ( empty($locations['primary']) )
+        return;
+
+    /* main nav. */
+    wp_nav_menu($attr);
+}
+
+function k2_theme_header_class()
+{
+    global $opt_theme_options;
+
+    if (!empty($opt_theme_options['menu_sticky'])) {
+
+        $class = 'menu-sticky';
+    }
+
+    echo esc_attr($class);
+}
+
 /* core functions. */
-//require_once(get_template_directory() . '/inc/functions.php');
+require_once(get_template_directory() . '/inc/functions.php');
 
 
 

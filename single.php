@@ -26,33 +26,34 @@ else {
 get_header(); ?>
 
 <div id="primary" class="container single-blog <?php echo esc_attr($_get_sidebar); ?>">
+
     <div class="row">
+
         <?php if($_get_sidebar == 'is-sidebar-left'){ ?>
             
             <div class="<?php echo esc_html($sidebar_col);?>">
+
                 <?php get_sidebar(); ?>
             </div>
 
         <?php }?>
+
         <div class="<?php echo esc_attr($blog_column); ?>">
+
             <main id="main" class="site-main" role="main">
 
                 <?php
                 /* Start the loop.*/
                 while ( have_posts() ) : the_post();
 
-                    /* Count Post View */
-                    book_junky_setPostViews(get_the_ID());
-
                     /* Include the single content template.*/
                     get_template_part( 'single-templates/single/content', get_post_format() );
 
-                    book_junky_single_comment();
+                    k2_theme_single_comment();
 
                     /* End the loop. */
                 endwhile;
                 ?>
-
             </main>
         </div><!-- #main -->
 
@@ -61,9 +62,7 @@ get_header(); ?>
             <div class="<?php echo esc_html($sidebar_col);?>">
                 <?php get_sidebar(); ?>
             </div>
-
         <?php }?>
-
     </div>
 </div><!-- #primary -->
 

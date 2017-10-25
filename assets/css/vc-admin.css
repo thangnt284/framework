@@ -1,0 +1,22 @@
+.vc_wrapper-param-type-img .img-select ul li img {box-shadow:0px 0px 1px 1px green;}
+.vc_wrapper-param-type-img .img-select ul li.active img{box-shadow:0px 0px 1px 1px red;}
+.vc_wrapper-param-type-img .img-select ul li img:hover{box-shadow:0px 0px 1px 1px red;}
+.vc_edit_form_elements .vc_column {padding: 0px 15px !important;}
+
+.wpb_el_type_cms_template {
+    display: none !important;
+}
+
+.img-select ul li {
+	display: block;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#vc_edit-form-tabs .vc_shortcode-param {
+	margin-bottom: 20px;
+}
+
+#vc_edit-form-tabs .vc_description {
+	margin-top: 0;
+}
