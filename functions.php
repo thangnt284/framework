@@ -598,7 +598,7 @@ function k2_theme_header_navigation()
 
     $locations = get_nav_menu_locations();
 
-    if ( empty($locations['primary_menu']) )
+    if ( !empty($locations['primary_menu']) )
     {
 
         wp_nav_menu($attr);
