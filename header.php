@@ -3,12 +3,9 @@
  * The Header template for our theme
  *
  * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package CMSSuperHeroes
- * @subpackage CMS Theme
- * @since 1.0.0
  */
 ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,7 +20,7 @@
 <body <?php body_class(); ?>>
 <?php k2_theme_page_loading(); ?>
 
-<div id="page" class="hfeed site">
+<div class="wrap-site">
 
 	<header id="masthead" class="site-header">
 

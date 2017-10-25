@@ -9,7 +9,6 @@
  *
  */
 
-/* get side-bar position. */
 $_get_sidebar = k2_theme_get_sidebar( 'archive_layout' );
 $blog_column = $sidebar_col = '';
 

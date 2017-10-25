@@ -1,13 +1,4 @@
 <?php
-/**
- * The Template for displaying all single posts
- *
- * @package CMSSuperHeroes
- * @subpackage CMS Theme
- * @since 1.0.0
- */
-
-/* get side-bar position. */
 
 $blog_column = $sidebar_col = '';
 $_get_sidebar = k2_theme_get_sidebar( 'single_layout' );
