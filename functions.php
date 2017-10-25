@@ -640,6 +640,8 @@ function k2_theme_nav_menu()
     foreach ($obj_menus as $obj_menu) {
         $menus[$obj_menu->term_id] = $obj_menu->name;
     }
+    
+    var_dump($menus);
 
     return $menus;
 }
