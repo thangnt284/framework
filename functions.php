@@ -601,7 +601,12 @@ function k2_theme_header_navigation()
     if ( empty($locations['primary_menu']) )
     {
 
-        esc_html_e("Creat and select primary menu",'k2-theme');
+        ?>
+        <a href="<?php echo get_admin_url(); ?>nav-menus.php">
+
+            <?php esc_html_e('Create And Select Primary Menu', 'k2-theme'); ?>
+        </a>
+        <?php
         return;
     }
 
