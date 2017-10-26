@@ -30,13 +30,8 @@ vc_map(array(
     )
 ));
 
-<<<<<<< HEAD:inc/elements/test.php
-class WPBakeryShortCode_cms_search_book extends K2ShortCode
-{   
-=======
 class WPBakeryShortCode_cms_button extends K2ShortCode
 {
->>>>>>> f96ea4a5463f911cc184402c96fa215271ab0577:inc/elements/cms_button.php
 
     protected function content($atts, $content = null)
     {
