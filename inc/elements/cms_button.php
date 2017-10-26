@@ -1,7 +1,7 @@
 <?php
 vc_map(array(
     "name" => 'CMS Search Book',
-    "base" => "cms_button",
+    "base" => "cms_search_book",
     "icon" => "cs_icon_for_vc",
     "category" => esc_html__('CmsSuperheroes Shortcodes', "book-junky"),
     "params" => array(
