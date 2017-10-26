@@ -20,17 +20,10 @@ function k2_theme_required_plugins() {
      */
     $plugins = array(
         array(
-            'name'               => 'EF3-Framework',
-            'slug'               => 'EF3-Framework',
-            'source'             => get_template_directory_uri() . '/inc/plugins/EF3-Framework.zip',
+            'name'               => 'K2 Core',
+            'slug'               => 'k2_core',
+            'source'             => get_template_directory_uri() . '/inc/plugins/k2_core.zip',
             'required'           => true,
-        ),
-
-        array(
-            'name'               => esc_html__('Revolution Slider','k2-theme'),
-            'slug'               => 'revslider',
-            'source'             => 'http://cmssuperheroes.com/plugins/revslider.zip',
-            'required'           => false,
         ),
         array(
             'name'               => 'Custom Post Type UI',
@@ -68,12 +61,6 @@ function k2_theme_required_plugins() {
             'slug'               => 'js_composer',
             'source'             => 'http://cmssuperheroes.com/plugins/js_composer.zip',
             'required'           => true,
-        ),
-        array(
-            'name'               => 'Flex Map',
-            'slug'               => 'flex-map',
-            'source'             => get_template_directory_uri() . '/inc/plugins/flex-map.zip',
-            'required'           => false,
         ),
     );
 

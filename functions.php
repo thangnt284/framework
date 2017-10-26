@@ -89,6 +89,7 @@ add_action('vc_after_init', 'k2_theme_after_vc_params');
 
 function k2_theme_after_vc_params()
 {
+    require(get_template_directory() . '/inc/elements/test.php');
 }
 
 /**
