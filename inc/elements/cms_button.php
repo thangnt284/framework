@@ -1,7 +1,7 @@
 <?php
 vc_map(array(
     "name" => 'CMS Search Book',
-    "base" => "cms_search_book",
+    "base" => "cms_button",
     "icon" => "cs_icon_for_vc",
     "category" => esc_html__('CmsSuperheroes Shortcodes', "book-junky"),
     "params" => array(
@@ -30,16 +30,21 @@ vc_map(array(
     )
 ));
 
+<<<<<<< HEAD:inc/elements/test.php
 class WPBakeryShortCode_cms_search_book extends K2ShortCode
 {   
+=======
+class WPBakeryShortCode_cms_button extends K2ShortCode
+{
+>>>>>>> f96ea4a5463f911cc184402c96fa215271ab0577:inc/elements/cms_button.php
 
     protected function content($atts, $content = null)
     {
         extract(shortcode_atts(array(), $atts));
 
-        $html_id = cmsHtmlID('cms_button');
-        $atts['template'] = 'template-'.str_replace('.php','',$atts['cms_template']);
-        $atts['html_id'] = $html_id;
+//        $html_id = cmsHtmlID('cms_button');
+//        $atts['template'] = 'template-'.str_replace('.php','',$atts['cms_template']);
+//        $atts['html_id'] = $html_id;
         return parent::content($atts, $content);
     }
 }
