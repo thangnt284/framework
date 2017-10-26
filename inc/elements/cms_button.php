@@ -1,7 +1,7 @@
 <?php
 vc_map(array(
     "name" => 'CMS Search Book',
-    "base" => "cms_search_book",
+    "base" => "cms_button",
     "icon" => "cs_icon_for_vc",
     "category" => esc_html__('CmsSuperheroes Shortcodes', "book-junky"),
     "params" => array(
@@ -25,7 +25,7 @@ vc_map(array(
 class WPBakeryShortCode_cms_button extends K2ShortCode
 {
 
-    function __construct($atts, $content = null)
+    protected function content($atts, $content = null)
     {
         extract(shortcode_atts(array(
             'align_button'  => 'center',
