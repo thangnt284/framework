@@ -31,11 +31,15 @@ vc_map(array(
 ));
 
 class WPBakeryShortCode_cms_search_book extends K2ShortCode
-{
+{   
 
     protected function content($atts, $content = null)
     {
         extract(shortcode_atts(array(), $atts));
+
+        $html_id = cmsHtmlID('cms_button');
+        $atts['template'] = 'template-'.str_replace('.php','',$atts['cms_template']);
+        $atts['html_id'] = $html_id;
         return parent::content($atts, $content);
     }
 }
