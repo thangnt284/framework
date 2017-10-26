@@ -89,7 +89,7 @@ add_action('vc_after_init', 'k2_theme_after_vc_params');
 
 function k2_theme_after_vc_params()
 {
-//    require_once(get_template_directory() . '/inc/elements/cms_button.php');
+    require_once(get_template_directory() . '/inc/elements/cms_button.php');
 }
 
 /**
