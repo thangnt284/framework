@@ -168,11 +168,11 @@ Redux::setSection($opt_name, array(
         ),
 
         array(
-            'subtitle'          => esc_html__('Enable back to top button.', 'cms-theme-framework'),
-            'id'                => 'general_back_to_top',
-            'type'              => 'switch',
-            'title'             => esc_html__('Back To Top', 'cms-theme-framework'),
-            'default'           => true,
+            'title' => esc_html__('Select Favicon Site', 'book-junky'),
+            'subtitle' => esc_html__('Set icon for your site file type *.ico,.png', 'book-junky'),
+            'id' => 'fav_icon',
+            'type' => 'media',
+            'url' => false,
         ),
 
         array(
@@ -195,11 +195,11 @@ Redux::setSection($opt_name, array(
         ),
 
         array(
-            'title' => esc_html__('Select Favicon Site', 'book-junky'),
-            'subtitle' => esc_html__('Set icon for your site file type *.ico,.png', 'book-junky'),
-            'id' => 'fav_icon',
-            'type' => 'media',
-            'url' => false,
+            'subtitle'          => esc_html__('Enable back to top button.', 'cms-theme-framework'),
+            'id'                => 'back_to_top',
+            'type'              => 'switch',
+            'title'             => esc_html__('Back To Top', 'cms-theme-framework'),
+            'default'           => true,
         ),
     )
 ));

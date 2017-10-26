@@ -159,7 +159,7 @@ add_action('admin_enqueue_scripts', 'k2_theme_admin_scripts');
 function k2_theme_widgets_init()
 {
 
-    global $opt_theme_options;
+    global $theme_opts;
 
     register_sidebar(array(
         'name' => esc_html__('Main Sidebar', 'k2-theme'),
@@ -283,12 +283,12 @@ function k2_theme_post_nav()
 
 function k2_theme_get_sidebar($check)
 {
-    global $opt_theme_options;
+    global $theme_opts;
 
     $_sidebar = 'right';
-    if (!empty($opt_theme_options[$check])) {
+    if (!empty($theme_opts[$check])) {
 
-        $_sidebar = $opt_theme_options[$check];
+        $_sidebar = $theme_opts[$check];
     }
 
     return 'is-sidebar-' . esc_attr($_sidebar);
@@ -311,22 +311,22 @@ function k2_theme_field_comment($fields)
 
 function k2_theme_favicon_icon()
 {
-    global $opt_theme_options;
+    global $theme_opts;
 
-    if ( !empty($opt_theme_options['fav_icon']['url']) ) {
+    if ( !empty($theme_opts['fav_icon']['url']) ) {
 
-        echo esc_url($opt_theme_options['fav_icon']['url']);
+        echo esc_url($theme_opts['fav_icon']['url']);
     } else {
-        echo get_template_directory_uri() . '/assets/images/fav.png';
+        echo get_template_directory_uri() . '/assets/images/fav.ico';
     }
 }
 
 
 function k2_theme_back_to_top()
 {
-    global $opt_theme_options;
+    global $theme_opts;
 
-    if (!empty($opt_theme_options['general_back_to_top'])) {
+    if (!empty($theme_opts['back_to_top'])) {
         ?>
         <div class="k2-theme-back-to-top"><i class="fa fa-angle-double-up"></i></div><?php
     }
@@ -334,25 +334,25 @@ function k2_theme_back_to_top()
 
 function k2_theme_header()
 {
-    global $opt_theme_options, $opt_meta_options;
+    global $theme_opts, $opt_meta_options;
 
-    if ( empty($opt_theme_options) ) {
+    if ( empty($theme_opts) ) {
         get_template_part('inc/header/header', '1');
         return;
     }
 
     if (is_page() && !empty($opt_meta_options['header_layout']))
-        $opt_theme_options['header_layout'] = $opt_meta_options['header_layout'];
+        $theme_opts['header_layout'] = $opt_meta_options['header_layout'];
 
     /* load custom header template. */
-    get_template_part('inc/header/header', $opt_theme_options['header_layout']);
+    get_template_part('inc/header/header', $theme_opts['header_layout']);
 }
 
 function k2_theme_page_loading()
 {
-    global $opt_theme_options;
+    global $theme_opts;
 
-    if (!empty($opt_theme_options['page_loading'])) {
+    if (!empty($theme_opts['page_loading'])) {
         echo '<div id="book-junky-loadding"><div class="wrap-loading">
         <div class="bounceball"></div>
         <div class="text">';
@@ -362,14 +362,14 @@ function k2_theme_page_loading()
 }
 
 function k2_theme_page_title(){
-    global $opt_theme_options, $opt_meta_options;
+    global $theme_opts, $opt_meta_options;
 
     /* default. */
     $layout = '2';
 
     /* get theme options */
-    if( !empty($opt_theme_options['page_title_layout']))
-        $layout = $opt_theme_options['page_title_layout'];
+    if( !empty($theme_opts['page_title_layout']))
+        $layout = $theme_opts['page_title_layout'];
 
     /* custom layout from page. */
     if( is_page() && !empty($opt_meta_options['page_title_layout']))
@@ -551,9 +551,9 @@ function k2_theme_post_thumbnail() {
 function k2_theme_single_comment()
 {
 
-    global $opt_theme_options;
+    global $theme_opts;
 
-    if (!empty($opt_theme_options['single_comment'])) :
+    if (!empty($theme_opts['single_comment'])) :
         /* If comments are open or we have at least one comment, load up the comment template.*/
 
         if (comments_open() || get_comments_number()) :
@@ -565,8 +565,8 @@ function k2_theme_single_comment()
 
 function k2_theme_single_tag()
 {
-    global $opt_theme_options;
-    if (!empty($opt_theme_options['single_tag'])) :
+    global $theme_opts;
+    if (!empty($theme_opts['single_tag'])) :
         ?>
         <div class="entry-categories"><?php the_terms(get_the_ID(), 'post_tag', '', ''); ?></div>
         <?php
@@ -619,9 +619,9 @@ function k2_theme_header_navigation()
 
 function k2_theme_header_class()
 {
-    global $opt_theme_options;
+    global $theme_opts;
 
-    if (!empty($opt_theme_options['menu_sticky'])) {
+    if (!empty($theme_opts['menu_sticky'])) {
 
         $class = 'menu-sticky';
     }
