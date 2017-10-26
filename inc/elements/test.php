@@ -19,17 +19,23 @@ vc_map(array(
 		    "group" => esc_html__("Template", 'book-junky'),
 		    'weight' => 1,
 		),
+
+		array(
+            "type" => "textfield",
+            "heading" => esc_html__("Button Border Radius", "book-junky"),
+            "param_name" => "btn_radius",
+            "description" => "Enter: ...px",
+            "group" => esc_html__("Button Settings", "book-junky"),
+        ),
     )
 ));
 
-class WPBakeryShortCode_cms_button extends K2ShortCode
+class WPBakeryShortCode_cms_search_book extends K2ShortCode
 {   
 
     protected function content($atts, $content = null)
     {
-        extract(shortcode_atts(array(
-            'align_button'  => 'center',
-        ), $atts));
+        extract(shortcode_atts(array(), $atts));
 
         $html_id = cmsHtmlID('cms_button');
         $atts['template'] = 'template-'.str_replace('.php','',$atts['cms_template']);
