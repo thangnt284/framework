@@ -8,7 +8,7 @@ if (! class_exists('Redux')) {
 }
 
 // This line is only for altering the demo. Can be easily removed.
-$opt_name = apply_filters('opt_name', 'theme_options');
+$opt_name = apply_filters('opt_name', 'theme_opts');
 
 $theme = wp_get_theme(); // For use with some settings. Not necessary.
 
@@ -73,7 +73,7 @@ $args = array(
     // If true, shows the default value next to each field that is not the default value.
     'default_mark' => '',
     // What to print by the field's title if the value shown is default. Suggested: *
-    'show_import_export' => true,
+    'show_import_export' => false,
     // Shows the Import/Export panel when not used as a field.
 
     // CAREFUL -> These options are for advanced use only
