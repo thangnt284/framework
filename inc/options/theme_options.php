@@ -16,41 +16,50 @@ $args = array(
     // TYPICAL -> Change these values as you need/desire
     'opt_name' => $opt_name,
     // This is where your data is stored in the database and also becomes your global variable name.
+
     'display_name' => $theme->get('Name'),
     // Name that appears at the top of your panel
+
     'display_version' => $theme->get('Version'),
     // Version that appears at the top of your panel
+
     'menu_type' => 'menu',
     // Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
+
     'allow_sub_menu' => true,
     // Show the sections below the admin menu item or not
-    'menu_title' => $theme->get('Name'),
+
+    'menu_title' => esc_html__('System Options','k2-theme'),
+
     'page_title' => $theme->get('Name'),
-    // You will need to generate a Google API key to use this feature.
-    // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
-    'google_api_key' => '',
-    // Set it you want google fonts to update weekly. A google_api_key value is required.
+
+    'admin_bar' => false,
+
     'google_update_weekly' => false,
-    // Must be defined to add google fonts to the typography module
+    // Set it you want google fonts to update weekly. A google_api_key value is required.
+
     'async_typography' => true,
-    // Use a asynchronous font on the front end or font string
-    // 'disable_google_fonts_link' => true, // Disable this in case you want to create your own google fonts loader
-    'admin_bar' => true,
-    // Show the panel pages on the admin bar
-    'admin_bar_icon' => 'dashicons-smiley',
-    // Choose an icon for the admin bar menu
+    
     'admin_bar_priority' => 50,
     // Choose an priority for the admin bar menu
+
     'global_variable' => '',
     // Set a different name for your global variable other than the opt_name
+    
     'dev_mode' => false,
     // Show the time the page took to load, etc
+
     'update_notice' => true,
     // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
+
     'customizer' => true,
     // Enable basic customizer support
-    // 'open_expanded' => true, // Allow you to start the panel in an expanded way initially.
-    'disable_save_warn' => true, // Disable the save warning when a user changes a field
+
+    'open_expanded' => false, 
+    // Allow you to start the panel in an expanded way initially.
+
+    'disable_save_warn' => true, 
+    // Disable the save warning when a user changes a field
 
     // OPTIONAL -> Give you extra features
     'page_priority' => null,
@@ -78,15 +87,19 @@ $args = array(
 
     // CAREFUL -> These options are for advanced use only
     'transient_time' => 60 * MINUTE_IN_SECONDS,
+
     'output' => true,
     // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
     'output_tag' => true,
     // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
-    // 'footer_credit' => '', // Disable the footer credit of Redux. Please leave if you can help it.
+
+    'footer_credit' => '', 
+    // Disable the footer credit of Redux. Please leave if you can help it.
 
     // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
     'database' => '',
     // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
+
     'use_cdn' => true,
     // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
 
@@ -131,39 +144,63 @@ Redux::setSection($opt_name, array(
     'icon' => 'el-icon-adjust-alt',
     'fields' => array(
         array(
-            'title'             => esc_html__('Layout', 'cms-theme-framework'),
-            'subtitle'          => esc_html__('Full width / Boxed.', 'cms-theme-framework'),
-            'id'                => 'general_layout',
-            'type'              => 'button_set',
-            'options'           => array(
-                                        1 => esc_html__('Full width', 'cms-theme-framework'),
-                                        0 => esc_html__('Boxed', 'cms-theme-framework')
-                                    ),
-            'default'           => 1
+            'title'             => esc_html__('Body Boxed', 'book-junky'),
+            'id'                => 'en_boxed',
+            'type'              => 'switch',
+            'subtitle'       => esc_html__('work on screen min width 1650px','book-junky'),
+            'default'           => false,
         ),
+
         array(
             'title'             => esc_html__('Body Background', 'cms-theme-framework'),
             'subtitle'          => esc_html__('Body background.', 'cms-theme-framework'),
-            'id'                => 'general_background',
+            'id'                => 'bg_site',
             'type'              => 'background',
-            'output'            => array( 'body' ),
-            'required'          => array( 'general_layout', '=', 0 )
+            'required'          => array( 'en_boxed', '=', '1' )
         ),
+
         array(
             'title'             => esc_html__('Content Background', 'cms-theme-framework'),
             'subtitle'          => esc_html__('Content background.', 'cms-theme-framework'),
-            'id'                => 'general_content_background',
+            'id'                => 'bg_content',
             'type'              => 'background',
-            'output'            => array( '#content' ),
-            'required'          => array( 'general_layout', '=', 0 )
+            'required'          => array( 'en_boxed', '=', '1' )
         ),
+
         array(
             'subtitle'          => esc_html__('Enable back to top button.', 'cms-theme-framework'),
             'id'                => 'general_back_to_top',
             'type'              => 'switch',
             'title'             => esc_html__('Back To Top', 'cms-theme-framework'),
             'default'           => true,
-        )
+        ),
+
+        array(
+            'id'             => 'space_content',
+            'type'           => 'spacing',
+            'mode'           => 'padding',
+            'left'           => false,
+            'right'          => false,
+            'units'          => array('px'),
+            'title'          => esc_html__('Space Content', 'book-junky'),
+            'subtitle'       => esc_html__('Space content width header and footer default 100px.', 'book-junky'),
+        ),
+
+        array(
+            'subtitle'          => esc_html__('Enable Page Loading.', 'book-junky'),
+            'id'                => 'page_loading',
+            'type'              => 'switch',
+            'title'             => esc_html__('Page Loading', 'book-junky'),
+            'default'           => false,
+        ),
+
+        array(
+            'title' => esc_html__('Select Favicon Site', 'book-junky'),
+            'subtitle' => esc_html__('Set icon for your site file type *.ico,.png', 'book-junky'),
+            'id' => 'fav_icon',
+            'type' => 'media',
+            'url' => false,
+        ),
     )
 ));
 
