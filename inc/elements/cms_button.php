@@ -8,7 +8,7 @@ vc_map(array(
     	array(
 		    'type' => 'k2_images_param',
 		    'heading' => esc_html__( 'Fancybox Style', 'book-junky' ),
-		    'value' => 
+		    'values' => 
 			    array(
 			    	'fancybox-1' => get_template_directory_uri().'/inc/elements/images/fancy-1.jpg',
 			    	'fancybox-2' => get_template_directory_uri().'/inc/elements/images/fancy-2.jpg',
@@ -19,6 +19,18 @@ vc_map(array(
 		    "group" => esc_html__("Template", 'book-junky'),
 		    'weight' => 1,
 		),
+
+        array(
+            "type" => "textfield",
+            'heading' => esc_html__( 'Title', 'book-junky' ),
+            "param_name" => "carousel_title",
+            "group" => esc_html__("Template", 'book-junky'),
+            'dependency' => array(
+                'element' => 'fancybox_style',
+                'value' => array('fancybox-1','carousel-4'),
+            ),
+            "group" => esc_html__("Template", 'book-junky'),
+        ),
 
 		array(
             "type" => "textfield",
