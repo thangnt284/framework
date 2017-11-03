@@ -2,7 +2,12 @@
 <script>
     jQuery('#k2-map-test').K2Map(
         {
-            zoom:1
+//            zoomControl:false,
+//            mapTypeControl:false,
+//            scaleControl:false,
+//            streetViewControl:false,
+//            rotateControl:false,
+//            fullscreenControl:false,
         }
     );
 </script>
